@@ -1,0 +1,29 @@
+# Debug.
+npm-debug.log
+
+# Git
+*.rej
+*.orig
+
+# External libraries.
+/node_modules
+/jspm_packages
+/dist
+
+# Testing Data.
+junitresults.xml
+
+# Compiled css.
+/app/css
+
+#Oxygen
+__MACOSX
+
+#OSX
+.DS_Store
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
