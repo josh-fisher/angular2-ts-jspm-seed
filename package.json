@@ -38,6 +38,7 @@
     "casperjs": "^1.1.0-beta3",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
+    "gulp-angular-embed-templates": "^1.1.0",
     "gulp-angular-protractor": "0.0.6",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cached": "^1.1.0",
