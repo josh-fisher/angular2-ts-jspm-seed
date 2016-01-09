@@ -46,30 +46,43 @@ If not using groc, feel free to skip this section. However, in doing so your doc
 ### Main 
 
 `gulp` - The default task. Builds all, tests all and serves the main `dist` directory.
+
 `gulp dev` - Uses babel to transpile down to ES5 using systemjs, serves the development build and watches for any file changes. This is better to use for development because code is transpiled down to ES5 before being sent to browser. Slower build time but faster code in the browser.
+
 `gulp prod` - Uses SystemJS Builder to create an SFX minified file and serves the production build. This is a single file build that contains all css,js, and templates.
 
 ### Builds
 
 `gulp build:dev` - Builds the `dev` build but does not serve or watch the files.
+
 `gulp build:prod` - Builds the `prod` build but does not server or watch the files
+
 `gulp build:docs` - Builds the documentation. Make sure to have a dev build or else the documentation will be empty. 
+
 `gulp build` - Cleans the `dist` directory, builds dev, prod, and documentation.
 
 ### Tests
 
 `gulp test:dev` - Uses Karma to run jasmine unit tests against the development build.
+
 `gulp test:prod` - Uses Protractor to run end 2 end tests.
+
 `gulp test:css` - Uses BackstopJS to perform CSS Regression Tests.
+
 `gulp test` - Runs all of the tests
 
 ### Server
 
 `gulp serve` - Serves everything in the `dist` directory.
+
 `gulp serve:dev `- Serves the development build. Only works if there is an existing build.
+
 `gulp serve:prod` - Serves the production build. Only works if there is an existing build.
+
 `gulp serve:styleguide `- Serves the Living Style Guide.
+
 `gulp serve:esdoc `- Serves the ESDoc Documentation
+
 `gulp serve:groc` - Serves the Groc Documentation.
 
 
