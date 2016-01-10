@@ -15,6 +15,12 @@ gulp.task('serve:dev', [], function() {
                 "/assets": "./app/assets",
                 "/config": "."
             }
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });
@@ -23,6 +29,12 @@ gulp.task('serve:prod', [], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/prod"
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });
@@ -31,6 +43,12 @@ gulp.task('serve:styleguide', [], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/docs/styleguide"
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });
@@ -39,6 +57,12 @@ gulp.task('serve:tsdoc', [], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/docs/tsdoc"
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });
@@ -47,6 +71,12 @@ gulp.task('serve:groc', [], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/docs/groc"
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });
@@ -60,6 +90,12 @@ gulp.task('serve', function(){
         server: {
             baseDir: "./dist",
             directory: true
+        },
+        ui: {
+            port: 3100,
+            weinre: {
+                port: 3101
+            }
         }
     });
 });

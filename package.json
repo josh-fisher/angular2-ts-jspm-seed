@@ -51,7 +51,6 @@
     "gulp-jade": "^1.1.0",
     "gulp-jadelint": "^0.1.0",
     "gulp-less": "^3.0.5",
-    "gulp-minify-html": "^1.0.5",
     "gulp-preprocess": "^2.0.0",
     "gulp-replace": "^0.5.4",
     "gulp-shell": "^0.5.1",
@@ -62,6 +61,7 @@
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.0",
     "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
     "jasmine-reporters": "^2.1.1",
     "jspm": "^0.16.19",
     "karma": "^0.13.19",
@@ -74,10 +74,12 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-safari-launcher": "^0.1.1",
     "karma-sourcemap-loader": "^0.3.6",
+    "phantomjs": "^1.9.19",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "sc5-styleguide": "^0.3.41",
-    "systemjs-builder": "^0.14.15"
+    "systemjs-builder": "^0.14.15",
+    "tslint": "^3.2.1"
   },
   "jspm": {
     "directories": {

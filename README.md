@@ -69,8 +69,6 @@ If not using groc, feel free to skip this section. However, in doing so your doc
 
 `gulp test:css` - Uses BackstopJS to perform CSS Regression Tests.
 
-`gulp test` - Runs all of the tests
-
 ### Server
 
 `gulp serve` - Serves everything in the `dist` directory.
@@ -81,7 +79,7 @@ If not using groc, feel free to skip this section. However, in doing so your doc
 
 `gulp serve:styleguide `- Serves the Living Style Guide.
 
-`gulp serve:esdoc `- Serves the ESDoc Documentation
+`gulp serve:tsdoc `- Serves the TSDoc Documentation
 
 `gulp serve:groc` - Serves the Groc Documentation.
 
@@ -151,9 +149,6 @@ If not using groc, feel free to skip this section. However, in doing so your doc
 
 ## Issues
 
-- TSDock can not find node and jspm modules and therefor does not properly show referenced types.
-- gulp task `test:css` launches BackstopJS and it's own server, so if you want to test your local code you will need to first use `gulp serve:dev` or `gulp serve:prod` on another terminal ahead of time. This is something that can be addressed in an update to this project.
-- gulp task `test:prod` launches a selinium server to do testing against a url. You will need to have your project served before launching this task. In the future the e2e task should auto launch this server in the background.
 - See Groc Prereqs section above (step 3). Once the gulp-groc project is updated we need to update the dependency to eliminate that step.
 
 ## Influences
@@ -164,3 +159,4 @@ The following projects were used as a starting base. Some code may be the same f
 - [es6-jspm-gulp-boilerplate](https://github.com/alexweber/es6-jspm-gulp-boilerplate)
 - [angular2-seed](https://github.com/mgechev/angular2-seed)
 - [angular2-jspm-seed](https://github.com/madhukard/angular2-jspm-seed)
+- [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)

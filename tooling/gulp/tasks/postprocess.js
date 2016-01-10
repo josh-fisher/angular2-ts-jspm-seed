@@ -48,13 +48,12 @@ gulp.task('embedtemplates',function() {
         .pipe(embedTemplates({
             minimize: {
                 empty: true
-            },
-            useMinimizer: false
+            }
         }))
         .pipe(gulp.dest(global.paths.dev_dist))
 });
 
 
 // PostProcess all the things!
-gulp.task('postprocess:prod', ['postprocess_autoprefix', 'postprocess_images_and_fonts', 'minify_html', 'postprocess_html:prod']);
+gulp.task('postprocess:prod', ['postprocess_autoprefix', 'postprocess_images_and_fonts','postprocess_html:prod']);
 gulp.task('postprocess:dev', ['embedtemplates', 'postprocess_html:dev']);

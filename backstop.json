@@ -24,22 +24,19 @@
       "removeSelectors": [
       ],
       "selectors": [
-        "header",
-        "main",
-        "footer",
-        "body"
+        "example-component"
       ],
       "readyEvent": null,
       "delay": 500,
       "misMatchThreshold" : 0.1,
-      "onReadyScript": "../../tests/backstop/casper_scripts/onReady.js"
+      "onReadyScript": "../../test/backstop/casper_scripts/onReady.js"
     }
   ],
   "paths": {
-    "bitmaps_reference": "../../tests/css/bitmaps_reference",
+    "bitmaps_reference": "../../test/css/bitmaps_reference",
     "bitmaps_test": "../../dist/test_results/css/bitmaps_test",
     "compare_data": "../../dist/test_results/css/bitmaps_test/compare.json",
-    "casper_scripts": "../../tests/css/casper_scripts"
+    "casper_scripts": "../../test/css/casper_scripts"
   },
   "engine": "phantomjs",
   "report": ["CLI", "browser"],

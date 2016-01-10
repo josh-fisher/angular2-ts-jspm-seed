@@ -31,7 +31,7 @@ gulp.task('styleguide:applystyles', function() {
 gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles'])
 
 gulp.task('tsdoc', function() {
-    return gulp.src(global.paths.ts)
+    return gulp.src(global.paths.ts_nospec)
         .pipe(tsdoc({
             // TypeScript options (see typescript docs)
             "target": "es5",
@@ -55,7 +55,7 @@ gulp.task('tsdoc', function() {
         }))
 });
 
-gulp.task('groc', ['build:dev'], function () {
+gulp.task('groc', function () {
     var files = [
         global.paths.root + '/README.md',
         global.paths.src + '/**/*.ts',
@@ -69,4 +69,4 @@ gulp.task('groc', ['build:dev'], function () {
         }));
 });
 
-gulp.task('build:docs', ['styleguide', 'esdoc', 'groc']);
+gulp.task('build:docs', ['styleguide', 'tsdoc', 'groc']);

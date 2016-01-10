@@ -4,8 +4,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cached'),
     fontmin = require('gulp-fontmin'),
     imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    htmlmin = require('gulp-minify-html');
+    pngquant = require('imagemin-pngquant');
 
 // Minify Images
 gulp.task('minify_images', function () {
@@ -24,15 +23,4 @@ gulp.task('minify_fonts', function () {
         .pipe(cache('minify_fonts'))
         .pipe(fontmin())
         .pipe(gulp.dest(global.paths.src + '/assets/fonts/'))
-});
-
-// Minify Html
-
-gulp.task('minify_html', function () {
-    return gulp.src(global.paths.dev_dist + '/**/*.html')
-        .pipe(cache('minify_html'))
-        .pipe(htmlmin({
-            empty: true
-        }))
-        .pipe(gulp.dest(global.paths.dev_dist))
 });

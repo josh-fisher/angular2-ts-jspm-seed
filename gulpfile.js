@@ -11,6 +11,7 @@ global.paths = {
     'src': './app',
     // ES6 sources.
     'ts': './app/**/*.ts',
+    'ts_nospec': './app/**/!(*spec).ts',
     // Less sources.
     'less': './app//**/*.less',
     // Jade sources.
@@ -30,7 +31,9 @@ global.paths = {
 requireDir('./tooling/gulp/tasks', { recurse: false });
 
 // Default task
-gulp.task('default', ['build', 'test', 'serve']);
+gulp.task('default', function(callback){
+    runSequence('build', 'test:prod', 'test:css_generate_ref', 'test:css', 'serve:prod', callback);
+});
 
 gulp.task('dev', function(callback){
     runSequence('build:dev', 'serve:dev', 'watch:dev', callback)
@@ -45,9 +48,9 @@ gulp.task('build:dev', function(callback){
 });
 
 gulp.task('build:prod', function(callback){
-    runSequence('build:dev', 'clean:prod', 'lint', 'postprocess:prod', 'bundle', 'bundle:dependencies', 'bundle:sfx', 'clean:prod_postprocess', callback);
+    runSequence('build:dev', 'clean:prod', 'lint', 'postprocess:prod', 'bundle', 'bundle:dependencies', 'bundle:sfx', callback);
 });
 
 gulp.task('build', function(callback){
-    runSequence('clean', 'build:dev', 'build:prod', 'build:docs', callback);
+    runSequence('build:prod', 'build:docs', callback);
 });
