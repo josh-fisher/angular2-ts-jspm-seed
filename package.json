@@ -1,6 +1,6 @@
 {
   "name": "angular2-ts-jspm-seed",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular 2 seed app using typescript, jspm, gulp, and other opinionated frameworks",
   "main": "gulpfile.js",
   "scripts": {
