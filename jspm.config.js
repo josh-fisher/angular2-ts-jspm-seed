@@ -1,5 +1,4 @@
 System.config({
-  //baseURL: "/", (See https://github.com/Workiva/karma-jspm/issues/99 for explanation why this is not being used)
   defaultJSExtensions: true,
   transpiler: "typescript",
   typescriptOptions: {
@@ -15,9 +14,13 @@ System.config({
     "angular2": "npm:angular2@2.0.0-beta.0",
     "clean-css": "npm:clean-css@3.4.9",
     "css": "github:systemjs/plugin-css@0.1.20",
+    "es6-promise": "npm:es6-promise@3.0.2",
+    "es6-shim": "github:es-shims/es6-shim@0.34.4",
     "ng2-material": "npm:ng2-material@0.1.5",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "rxjs": "npm:rxjs@5.0.0-beta.1",
     "typescript": "npm:typescript@1.7.5",
+    "zone.js": "npm:zone.js@0.5.13",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -354,6 +357,10 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:rxjs@5.0.0-beta.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:sha.js@2.4.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -400,6 +407,10 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:zone.js@0.5.10": {
+      "es6-promise": "npm:es6-promise@3.0.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:zone.js@0.5.13": {
       "es6-promise": "npm:es6-promise@3.0.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     }

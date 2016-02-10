@@ -12,7 +12,7 @@ import { ExampleDirective } from '../../directives/example.directive';
     bindings: [ExampleService]
 })
 @View({
-    templateUrl: './example.component.html',
+    templateUrl: './components/example/example.component.html',
     directives: [ROUTER_DIRECTIVES, ExampleDirective]
 })
 export class ExampleComponent {

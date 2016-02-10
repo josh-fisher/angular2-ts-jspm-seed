@@ -24,7 +24,8 @@ gulp.task('lint_less', function () {
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(csslint({
-            'adjoining-classes': false
+            'adjoining-classes': false,
+	        'box-model': false
         }))
         .pipe(lessReporter())
         .on('error', function (err) {
