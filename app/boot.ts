@@ -5,10 +5,10 @@ import 'ng2-material/dist/ng2-material.css!';
 import 'ng2-material/dist/font.css!';
 
 // global imports
-import 'angular2/bundles/angular2-polyfills.min';
 import 'es6-shim';
 import 'rxjs';
 import 'reflect-metadata';
+import 'zone.js';
 
 // angular 2 imports
 import { bootstrap } from 'angular2/bootstrap';
