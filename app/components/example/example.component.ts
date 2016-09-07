@@ -9,10 +9,8 @@ import { ExampleDirective } from '../../directives/example.directive';
     selector: 'example-component',
     inputs: [],
     output: [],
-    bindings: [ExampleService]
-})
-@View({
-    templateUrl: './example.component.html',
+    bindings: [ExampleService],
+    templateUrl: './components/example/example.component.html',
     directives: [ROUTER_DIRECTIVES, ExampleDirective]
 })
 export class ExampleComponent {

@@ -27,7 +27,7 @@ gulp.task('transpile_jade:dev', function () {
         .pipe(gulp.dest(global.paths.dev_dist));
 });
 gulp.task('transpile_jade:prod', function () {
-    return gulp.src(global.paths.src + "/index.jade")
+    return gulp.src(global.paths.src + "/*.jade")
         .pipe(cache('transpile_jade:prod'))
         .pipe(jade())
         .pipe(gulp.dest(global.paths.prod_dist));

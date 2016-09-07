@@ -32,13 +32,13 @@ gulp.task('postprocess_images_and_fonts',['minify_fonts', 'minify_images'], func
 
 
 gulp.task('postprocess_html:dev', function() {
-    gulp.src(global.paths.dev_dist + '/index.html')
+    gulp.src(global.paths.dev_dist + '/*.html')
         .pipe(preprocess({context: { DEV: true, PROD: false}}))
         .pipe(gulp.dest(global.paths.dev_dist))
 });
 
 gulp.task('postprocess_html:prod', ['transpile_jade:prod'], function() {
-    gulp.src(global.paths.prod_dist + '/index.html')
+    gulp.src(global.paths.prod_dist + '/*.html')
         .pipe(preprocess({context: { DEV: false, PROD: true}}))
         .pipe(gulp.dest(global.paths.prod_dist))
 });
@@ -55,5 +55,5 @@ gulp.task('embedtemplates',function() {
 
 
 // PostProcess all the things!
-gulp.task('postprocess:prod', ['postprocess_autoprefix', 'postprocess_images_and_fonts','postprocess_html:prod']);
-gulp.task('postprocess:dev', ['embedtemplates', 'postprocess_html:dev']);
+gulp.task('postprocess:prod', ['embedtemplates', 'postprocess_autoprefix', 'postprocess_images_and_fonts','postprocess_html:prod']);
+gulp.task('postprocess:dev', ['postprocess_html:dev']);

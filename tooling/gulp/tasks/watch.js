@@ -1,26 +1,29 @@
 'use strict';
 
 var gulp = require('gulp'),
-    path = require('path'),
-    util = require('gulp-util');
-
-// Watch for changes.
-gulp.task('watch:realtime', function(){
-    gulp.watch("app/**/*.*", ['build:realtime']).on('change', logChanges);
-    gulp.watch(global.paths.dev_dist + '/**/*.*', ['serve:reload']).on('change', logChanges);
-});
+	path = require('path'),
+	util = require('gulp-util'),
+	runSequence = require('run-sequence');
 
 // Watch for changes.
 gulp.task('watch:dev', function(){
-    gulp.watch("app/**/*.ts", ['lint_ts', 'transpile_ts:dev']).on('change', logChanges);
-    gulp.watch("app/**/*.less", ['lint_less', 'transpile_less']).on('change', logChanges);
-    gulp.watch("app/**/*.jade", ['lint_jade', 'transpile_jade:dev']).on('change', logChanges);
-    gulp.watch(global.paths.dev_dist + '/**/*.*', ['serve:reload']).on('change', logChanges);
+	gulp.watch("app/**/*.ts").on('change', function(e){
+		logChanges(e);
+		runSequence('lint_ts', 'transpile_ts', 'postprocess:dev', 'serve:reload');
+	});
+	gulp.watch("app/**/*.less").on('change', function(e){
+		logChanges(e);
+		runSequence('lint_less', 'transpile_less', 'serve:reload');
+	});
+	gulp.watch("app/**/*.jade").on('change', function(e){
+		logChanges(e);
+		runSequence('lint_jade', 'transpile_jade:dev', 'serve:reload');
+	});
 });
 
 function logChanges(event) {
-    util.log(
-        util.colors.green('File ' + event.type + ': ') +
-        util.colors.magenta(path.basename(event.path))
-    );
+	util.log(
+		util.colors.green('File ' + event.type + ': ') +
+		util.colors.magenta(path.basename(event.path))
+	);
 }
